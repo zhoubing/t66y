@@ -19,14 +19,14 @@ from PIL import Image
 class T66yMongoListPipeline(object):
 
     def open_spider(self, spider):
-        self.mongo_client = pymongo.MongoClient(host='192.168.0.109', port=27017)
+        self.mongo_client = pymongo.MongoClient(host='192.168.0.111', port=27017)
         self.collection = self.mongo_client.t66y.article
 
     def close_spider(self, spider):
         self.mongo_client.close()
 
     def process_item(self, item, spider):
-        m = self.collection.update({'url': item['url']}, dict(item), upsert=True)
+        m = self.collection.update_one({'url': item['url']}, {'$set': dict(item)}, upsert=True)
         print(item)
         return item
 
@@ -52,7 +52,7 @@ class T66yPipeline(ImagesPipeline):
                 if img.endswith('.gif') or img.endswith('.GIF') or "sehuatuchuang" in img:
                     pass
                 else:
-                    yield Request(img, meta={'item': item, 'proxy': 'http://127.0.0.1:1087'}, dont_filter=True)
+                    yield Request(img, meta={'item': item, 'proxy': 'http://127.0.0.1:1081'}, dont_filter=True)
 
     def file_path(self, request, response=None, info=None):
         item = request.meta['item']
