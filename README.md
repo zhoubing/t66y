@@ -20,3 +20,16 @@ http://www.zvon.org/xxl/XPathTutorial/General_chi/examples.html
 
 splash相关文档
 https://github.com/scrapy-plugins/scrapy-splash https://splash.readthedocs.io/en/stable/install.html#os-x-docker https://splash.readthedocs.io/en/stable/api.html#request-filters
+
+
+下载GIF图
+https://www.cnblogs.com/lxy-jdsy/p/10389103.html
+
+下载原图
+https://stackoverflow.com/questions/51681601/images-downloaded-from-scrapy-smaller-than-expected-jpegs-or-unreadable-tifs
+
+update_one方法
+https://www.runoob.com/python3/python-mongodb-update-document.html
+
+数据重复清洗
+https://blog.csdn.net/cyq15539975613/article/details/83652798
